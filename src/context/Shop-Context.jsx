@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import Loader from "../components/Loader";
 
 export const ShopContext = createContext(null);
 export const QuantityContext = createContext(null);
@@ -89,7 +90,7 @@ const ShopContextProvider = (props) => {
   return (
     <ShopContext.Provider value={shopContextValue}>
       <QuantityContext.Provider value={productQuantity}>
-        {productList.length > 0 ? props.children : "Loading..."}
+        {productList.length > 0 ? props.children : <Loader />}
       </QuantityContext.Provider>
     </ShopContext.Provider>
   );

@@ -48,7 +48,7 @@ const Detail = () => {
     <div>
       {result.map((item, index) => {
         let discount =
-          item.price - item.price * (item.discountPercentage / 100);
+          item.price - item.price * (item.discountPercentage / 100).toFixed(1);
 
         return (
           <>

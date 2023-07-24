@@ -23,7 +23,7 @@ const Hero = () => {
   ];
   return (
     <>
-      <div className="md:max-w-screen-md rounded-lg mx-auto my-10">
+      <div className="w-full max-w-screen-md rounded-lg mx-auto">
         <Swiper
           spaceBetween={30}
           effect={"fade"}
@@ -32,11 +32,11 @@ const Hero = () => {
             clickable: true,
           }}
           modules={[EffectFade, Pagination, Autoplay]}
-          className="w-full rounded-lg"
+          className="w-full h-full"
         >
           {images.map((slide, i) => (
-            <SwiperSlide key={i}>
-              <img src={slide.img} alt="" />
+            <SwiperSlide key={i} className="w-full h-full">
+              <img src={slide.img} alt="" className="w-full h-full " />
             </SwiperSlide>
           ))}
         </Swiper>

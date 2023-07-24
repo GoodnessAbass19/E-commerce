@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import { ShopContext } from "../context/Shop-Context";
 
 const Nav = ({ data }) => {
   const [query, setQuery] = useState("");
+  const { cartItem } = useContext(ShopContext);
+  const quantity = cartItem;
 
   return (
     <>
@@ -42,6 +45,7 @@ const Nav = ({ data }) => {
             <Link to={`/cart`} className="text-white text-4xl">
               <ion-icon name="cart"></ion-icon>
             </Link>
+            {/* <h2>{quantity >= 1 ? <p>{quantity}</p> : <p>0</p>}</h2> */}
           </div>
         </div>
       </nav>
